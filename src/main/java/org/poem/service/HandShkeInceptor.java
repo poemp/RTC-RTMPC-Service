@@ -31,7 +31,6 @@ public class HandShkeInceptor extends HttpSessionHandshakeInterceptor {
      */
     @Override
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
-
         System.out.println("握手前" + request.getURI());
         //http协议转换websoket协议进行前，通常这个拦截器可以用来判断用户合法性等
         //鉴别用户
