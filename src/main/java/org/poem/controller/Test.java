@@ -36,10 +36,11 @@ public class Test {
     @Lazy
     private SimpMessagingTemplate simpMessagingTemplate;
 
-    @RequestMapping(value = "/live",method = RequestMethod.GET)
-    public String hello(){
+    @RequestMapping(value = "/live", method = RequestMethod.GET)
+    public String hello() {
         return "live";
     }
+
     @RequestMapping(value = "/live2", method = RequestMethod.GET)
     public String hello2(HttpServletRequest request) {
         System.out.println(request.getSession().getId());
@@ -101,7 +102,7 @@ public class Test {
     @MessageMapping(value = "/live3")
     @SendTo("/queue/users")
     public String getOnlineGuest() {
-        this.simpMessagingTemplate.convertAndSend("/topic/online_user","老师发布了一个通知");
+        this.simpMessagingTemplate.convertAndSend("/topic/online_user", "老师发布了一个通知");
         return "当前人数40人";
     }
 
