@@ -91,7 +91,6 @@ public class MyChannelInterceptor extends ImmutableMessageChannelInterceptor {
                 statDao.popOnlineUser(user);
                 simpMessagingTemplate.convertAndSend("/topic/online_user", statDao.getAllUserOnline());
             }
-
         }
         super.afterSendCompletion(message, channel, sent, ex);
     }
