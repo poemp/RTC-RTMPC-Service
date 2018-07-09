@@ -15,8 +15,20 @@ import java.util.Set;
 
 
 public class HandShkeInceptor extends HttpSessionHandshakeInterceptor {
+
+
     private static final Set<UserEntity> ONLINE_USERS = new HashSet<>();
 
+    /**
+     * 握手之前操作
+     *
+     * @param request
+     * @param response
+     * @param wsHandler
+     * @param attributes
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean beforeHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Map<String, Object> attributes) throws Exception {
 
@@ -38,6 +50,14 @@ public class HandShkeInceptor extends HttpSessionHandshakeInterceptor {
         return false;
     }
 
+    /**
+     * 握手之后操作
+     *
+     * @param request
+     * @param response
+     * @param wsHandler
+     * @param ex
+     */
     @Override
     public void afterHandshake(ServerHttpRequest request, ServerHttpResponse response, WebSocketHandler wsHandler, Exception ex) {
         //握手成功后，通常用来注册用户信息
