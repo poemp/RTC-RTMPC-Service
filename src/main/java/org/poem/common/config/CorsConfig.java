@@ -1,4 +1,4 @@
-package org.poem.bootstrap;
+package org.poem.common.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

@@ -1,4 +1,4 @@
-package org.poem.bootstrap;
+package org.poem.common.config;
 
 
 import org.poem.service.HandShkeInceptor;

@@ -25,10 +25,6 @@ public class HandShkeInceptor extends HttpSessionHandshakeInterceptor {
         //鉴别用户
         if (request instanceof ServletServerHttpRequest) {
             ServletServerHttpRequest servletRequest = (ServletServerHttpRequest) request;
-            //这句话很重要如果getSession(true)会导致移动端无法握手成功
-            //request.getSession(true)：若存在会话则返回该会话，否则新建一个会话。
-            //request.getSession(false)：若存在会话则返回该会话，否则返回NULL
-            //HttpSession session = servletRequest.getServletRequest().getSession(false);
             HttpSession session = servletRequest.getServletRequest().getSession();
             UserEntity user = (UserEntity) session.getAttribute("user");
             if (user != null) {
