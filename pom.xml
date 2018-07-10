@@ -85,6 +85,11 @@
             <artifactId>commons-collections</artifactId>
             <version>${commons-collction.version}</version>
         </dependency>
+        <dependency>
+            <groupId>io.projectreactor.ipc</groupId>
+            <artifactId>reactor-netty</artifactId>
+            <version>0.7.8.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>

@@ -1,6 +1,9 @@
 package org.poem.entity;
 
-import javax.persistence.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 
@@ -13,9 +16,7 @@ public class UserEntity implements Serializable {
     @Column(name = "ip")
     private String ip;
 
-    @Basic
     @Column(name = "random_name")
-
     private String randomName;
 
 
