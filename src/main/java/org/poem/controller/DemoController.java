@@ -7,7 +7,6 @@
 //import org.poem.common.utils.name.NameGeneratorUtils;
 //import org.poem.dao.StatDao;
 //import org.poem.dao.UserDao;
-//import org.poem.entity.MsgEntity;
 //import org.poem.entity.UserEntity;
 //import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.messaging.handler.annotation.Header;

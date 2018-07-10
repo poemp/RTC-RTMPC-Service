@@ -27,7 +27,7 @@ import java.util.Map;
 
 @Controller
 @RequestMapping("/")
-public class Test {
+public class MessageController {
     @Autowired
     private UserDao userDao;
     @Autowired

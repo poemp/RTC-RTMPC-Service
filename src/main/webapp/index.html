@@ -103,7 +103,9 @@
 
     var started = false; // 是否开始
     var channelReady = false; // 是否打开websocket通道
-
+    var requestScope = {
+        uid:123456789
+    };
     var channelOpenTime;
     var channelCloseTime;
     //连接类
@@ -237,7 +239,7 @@
     function openChannel() {
         console.log("打开websocket");
         socket = new WebSocket(
-            "ws://localhost:8080/WebrtcDemo/video/${requestScope.uid}");
+            "ws://localhost:8080/WebrtcDemo/video/"+requestScope.uid);
         //WSS是https
         socket.onopen = onChannelOpened;
         socket.onmessage = onChannelMessage;
@@ -250,7 +252,7 @@
      */
     function noticeMsg() {
         if (!initiator) {
-            setNotice("让别人加入（注意事项查看源码）: https://localhost:8443/WebrtcDemo/msg?oid=${requestScope.uid }");
+            setNotice("让别人加入（注意事项查看源码）: http://localhost:8080/WebrtcDemo/msg?oid="+requestScope.uid);
         } else {
             setNotice("初始化...");
         }
